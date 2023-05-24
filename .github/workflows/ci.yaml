@@ -21,14 +21,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build application
-        run: npm run build
-
       - name: Start application
         run: npm start &
-        background: true
-
-      - name: Wait for application to start
         run: sleep 10
 
       - name: Run Cypress tests
