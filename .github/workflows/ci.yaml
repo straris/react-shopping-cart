@@ -13,17 +13,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Build and run Docker container
-        run: |
-          docker build -t myapp .
-          docker run -d --name myapp-container myapp
-
-      - name: Wait for application to start
-        run: sleep 10
-
       - name: Run Cypress tests
         uses: cypress-io/github-action@v2
         with:
-          browser: chrome
+          image: cypress/included
           start: npm start
           wait-on: 'http://localhost:8080'
