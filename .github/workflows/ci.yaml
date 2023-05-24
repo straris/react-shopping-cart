@@ -7,7 +7,7 @@ build:
   image: node:14
   script:
     - npm install
-    
+
 test:
   stage: test
   image: cypress/included
@@ -17,3 +17,5 @@ test:
     - npm start &
     - sleep 10
     - npx cypress run --config baseUrl=http://localhost:8080
+only:
+  - main
