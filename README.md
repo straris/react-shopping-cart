@@ -55,59 +55,59 @@ npx cypress run
 ```
 
 #### Testing
-
 ##### Part 1: UI Automation
-
 - Add to cart (cypress\tests\addToCart.cy.ts):
-  -- User can add a product in the cart and the cart always updates respectively
-  -- Information in the cart always match with user's selection
+-- User can add a product in the cart and the cart always updates respectively
+-- Information in the cart always match with user's selection
 
 - Remove from cart (cypress\tests\removeFromCart.cy.ts):
-  -- User can remove a product in the cart and the cart always updates respectively
+-- User can remove a product in the cart and the cart always updates respectively
 
 Notes: As the application is a demo and basic, the only suggestion that I noticed would be to extend the functionality in order for the right product size to be added to the cart based on the filters, but this functionality is just missing from the app at the moment.
 
 ##### Part 2: API Automation
-
 I decided to focus on 2 of the pet endpoints (cypress\tests\api\pet.cy.ts):
 
-One issue that the test uncovered, the endpoint "GET", "https://petstore.swagger.io/v2/pet/findByStatus?status=invalid" should return 400 due to the _invalid_ status according to swaggers documentation, in reality the endpoint returns 200 and an empty object.
-
+One issue that the test uncovered, the endpoint "GET", "https://petstore.swagger.io/v2/pet/findByStatus?status=invalid" should return 400 due to the *invalid* status according to swagger's documentation, in reality the endpoint returns 200 and an empty object.
+ 
 ##### Part 3: Release Test
 
 - Functional Testing:
-  -- core features like product search, product listing, shopping cart, checkout process.
-  -- user registration, login, and account management.
-  -- forms and inputs, such as shipping and billing addresses, payment methods, and gift cards.
-  -- customer reviews and ratings.
+
+-- core features like product search, product listing, shopping cart, checkout process.
+
+-- user registration, login, and account management.
+-- forms and inputs, such as shipping and billing addresses, payment methods, and gift cards.
+-- customer reviews and ratings.
 
 - Compatibility Testing:
-  -- all supported browsers and versions.
-  -- all supported OSs
-  -- all supported screen sizes
+
+-- all supported browsers and versions.
+-- all supported OSs
+-- all supported screen sizes
 
 - Performance Testing:
-  -- load tests
-  -- response times
+-- load tests
+-- response times
 
 - Security Testing:
-  -- Validate SSL/TLS certificate.
-  -- cross-site scripting, SQL injection, cross-site request forgery.
-  -- encryption of sensitive customer information, such as passwords and payment details.
-  -- penetration testing.
+-- Validate SSL/TLS certificate.
+-- cross-site scripting, SQL injection, cross-site request forgery.
+-- encryption of sensitive customer information, such as passwords and payment details.
+-- penetration testing.
 
 - Usability Testing:
-  -- test the website's new features for intuitiveness and ease of navigation.
-  -- accessibility features for users with disabilities.
+-- test the website's new features for intuitiveness and ease of navigation.
+-- accessibility features for users with disabilities.
 
 - Internationalization and Localization Testing:
-  -- language and currency support for different regions.
-  -- correct date, time, and address formats based on regional settings.
+-- language and currency support for different regions.
+-- correct date, time, and address formats based on regional settings.
 
 - Integration Testing:
-  -- integration with third-party services (payment gateways, shipping providers, etc.).
+-- integration with third-party services (payment gateways, shipping providers, etc.).
 
-- Regression Testing:
+- Regression Testing
 
 ### Copyright and license
 
