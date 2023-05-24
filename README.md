@@ -114,6 +114,9 @@ One issue that the test uncovered, the endpoint "GET", "https://petstore.swagger
 
 - Regression Testing
 
+##### Part 4 Bonus Tasks
+- Github actions are used to run the application and execute cypress tests in a docker container with chrome and firefox
+
 ### Copyright and license
 
 The MIT License (MIT). Please see License File for more information.
