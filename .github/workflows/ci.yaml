@@ -31,9 +31,12 @@ jobs:
           browser: chrome
           wait-on: 'http://localhost:3000'
 
-- name: Upload screenshots
-  uses: actions/upload-artifact@latest
-  if: failure()
-  with:
-      name: cypress-screenshots
-      path: cypress/screenshots
+  upload-screenshots:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload screenshots
+        uses: actions/upload-artifact@latest
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
