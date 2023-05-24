@@ -56,6 +56,8 @@ npx cypress run
 
 #### Testing
 ##### Part 1: UI Automation
+To prepare the application state for the tests I used App actions in order to expose internal functionality to cypress, in this case the method _useCart_ is exposed and _addProduct_ is used to add a product in the cart
+
 - Add to cart (cypress\tests\addToCart.cy.ts):
 -- User can add a product in the cart and the cart always updates respectively
 -- Information in the cart always match with user's selection
@@ -63,9 +65,15 @@ npx cypress run
 - Remove from cart (cypress\tests\removeFromCart.cy.ts):
 -- User can remove a product in the cart and the cart always updates respectively
 
+Test improvements:
+- Add data-testId to all used elements
+- create a custom react hook in order to give access of application functions to cypress in a re-usable way
+- Create a central selectors json file
+
 Notes: As the application is a demo and basic, the only suggestion that I noticed would be to extend the functionality in order for the right product size to be added to the cart based on the filters, but this functionality is just missing from the app at the moment.
 
 ##### Part 2: API Automation
+Since cypress was already used for UI I continued with it for API testing.
 I decided to focus on 2 of the pet endpoints (cypress\tests\api\pet.cy.ts):
 
 One issue that the test uncovered, the endpoint "GET", "https://petstore.swagger.io/v2/pet/findByStatus?status=invalid" should return 400 due to the *invalid* status according to swagger's documentation, in reality the endpoint returns 200 and an empty object.
