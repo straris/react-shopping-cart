@@ -27,7 +27,7 @@ const CartProduct = ({ product }: IProps) => {
   const handleDecreaseProductQuantity = () => decreaseProductQuantity(product);
 
   return (
-    <S.Container>
+    <S.Container data-testId="productContainer">
       <S.DeleteButton
         onClick={handleRemoveProduct}
         title="remove product from cart"
@@ -49,10 +49,11 @@ const CartProduct = ({ product }: IProps) => {
           <S.ChangeQuantity
             onClick={handleDecreaseProductQuantity}
             disabled={quantity === 1 ? true : false}
+            data-testId="decreaseQuantity"
           >
             -
           </S.ChangeQuantity>
-          <S.ChangeQuantity onClick={handleIncreaseProductQuantity}>
+          <S.ChangeQuantity onClick={handleIncreaseProductQuantity} data-testId="increaseQuantity">
             +
           </S.ChangeQuantity>
         </div>

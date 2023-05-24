@@ -65,7 +65,7 @@ const Product = ({ product }: IProps) => {
         </S.Val>
         {productInstallment}
       </S.Price>
-      <S.BuyButton onClick={handleAddProduct} tabIndex={-1}>
+      <S.BuyButton onClick={handleAddProduct} tabIndex={-1} data-testId='addToCart'>
         Add to cart
       </S.BuyButton>
     </S.Container>

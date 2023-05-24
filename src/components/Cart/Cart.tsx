@@ -4,10 +4,17 @@ import CartProducts from './CartProducts';
 import { useCart } from 'contexts/cart-context';
 
 import * as S from './style';
+declare global {
+  interface Window {
+      model:any;
+  }
+}
 
 const Cart = () => {
   const { products, total, isOpen, openCart, closeCart } = useCart();
 
+  var model = useCart();
+    window.model = model
   const handleCheckout = () => {
     if (total.productQuantity) {
       alert(
