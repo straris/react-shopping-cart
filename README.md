@@ -73,39 +73,36 @@ One issue that the test uncovered, the endpoint "GET", "https://petstore.swagger
 ##### Part 3: Release Test
 
 - Functional Testing:
-
--- core features like product search, product listing, shopping cart, checkout process.
-
--- user registration, login, and account management.
--- forms and inputs, such as shipping and billing addresses, payment methods, and gift cards.
--- customer reviews and ratings.
+  - core features like product search, product listing, shopping cart, checkout process.
+  - user registration, login, and account management.
+  - forms and inputs, such as shipping and billing addresses, payment methods, and gift cards.
+  - customer reviews and ratings.
 
 - Compatibility Testing:
-
--- all supported browsers and versions.
--- all supported OSs
--- all supported screen sizes
+  - all supported browsers and versions.
+  - all supported OSs
+  - all supported screen sizes
 
 - Performance Testing:
--- load tests
--- response times
+  - load tests
+  - response times
 
 - Security Testing:
--- Validate SSL/TLS certificate.
--- cross-site scripting, SQL injection, cross-site request forgery.
--- encryption of sensitive customer information, such as passwords and payment details.
--- penetration testing.
+  - Validate SSL/TLS certificate.
+  - cross-site scripting, SQL injection, cross-site request forgery.
+  - encryption of sensitive customer information, such as passwords and payment details.
+  - penetration testing.
 
 - Usability Testing:
--- test the website's new features for intuitiveness and ease of navigation.
--- accessibility features for users with disabilities.
+  - test the website's new features for intuitiveness and ease of navigation.
+  - accessibility features for users with disabilities.
 
 - Internationalization and Localization Testing:
--- language and currency support for different regions.
--- correct date, time, and address formats based on regional settings.
+  - language and currency support for different regions.
+  - correct date, time, and address formats based on regional settings.
 
 - Integration Testing:
--- integration with third-party services (payment gateways, shipping providers, etc.).
+  - integration with third-party services (payment gateways, shipping providers, etc.).
 
 - Regression Testing
 
