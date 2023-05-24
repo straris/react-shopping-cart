@@ -25,7 +25,7 @@ jobs:
         run: npm start & sleep 10
 
       - name: Run Cypress tests
-        uses: cypress-io/github-action@latest
+        uses: cypress-io/github-action@v5
         with:
           start: npm start
           browser: chrome
@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Upload screenshots
-        uses: actions/upload-artifact@latest
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-screenshots
