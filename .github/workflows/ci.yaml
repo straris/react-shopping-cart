@@ -18,5 +18,5 @@ test:
     - sleep 10
     - npx cypress run --config baseUrl=http://localhost:8080
 
-only:
-  - main
+rules:
+  - always
