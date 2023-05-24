@@ -32,6 +32,7 @@ jobs:
           wait-on: 'http://localhost:3000'
 
   upload-screenshots:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Upload screenshots
