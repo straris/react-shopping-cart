@@ -1,21 +1,19 @@
-name: Cypress Tests
+stages:
+  - build
+  - test
 
-on:
-  push:
-    branches:
-      - main
+build:
+  stage: build
+  image: node:14
+  script:
+    - npm install
+    
+test:
+  stage: test
+  image: cypress/included
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Run Cypress tests
-        uses: cypress-io/github-action@v2
-        with:
-          image: cypress/included
-          start: npm start
-          wait-on: 'http://localhost:8080'
+  script:
+    - npm install
+    - npm start &
+    - sleep 10
+    - npx cypress run --config baseUrl=http://localhost:8080
