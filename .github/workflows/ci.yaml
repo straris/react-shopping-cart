@@ -1,0 +1,52 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Build and test Node.js application
+        run: |
+          npm ci
+          npm run build
+          npm test
+
+  cypress:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install serve
+        run: npm install -g serve
+
+      - name: Start application server
+        run: serve -s build -l 8080 &
+        env:
+          CI: true
+
+      - name: Run Cypress tests
+        run: npx cypress run --headless --config baseUrl=http://localhost:8080
